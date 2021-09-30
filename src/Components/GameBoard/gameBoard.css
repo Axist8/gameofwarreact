@@ -1,0 +1,139 @@
+.game-board {
+    border-radius: 12px;
+    width: 800px;
+    height: 500px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.user-side {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    border-radius: 25px 25px 0 0;
+    border-bottom: 1px solid rgb(160, 160, 160);
+    grid-area: 1 / 1 / 7 / 1;
+    background-color: rgba(0, 0, 0, .5);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 66.6%, 60% 66.6%, 40% 100%, 0% 100% )
+}
+
+.cpu-side {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    border-radius: 0 0 25px 25px;
+    border-top: 1px solid rgb(160, 160, 160);
+    grid-area: 5 / 1 / 11 / 1;
+    background-color: rgba(0, 0, 0, .7);
+    clip-path: polygon(0% 33.3%, 40% 33.3%, 60% 0%, 100% 0%, 100% 100%, 0% 100%)
+}
+
+.user,
+.cpu,
+.user-score,
+.cpu-score {
+    color: rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+}
+
+.user {
+    grid-area: 1 / 1 / 7 / 3;
+}
+
+.cpu {
+    grid-area: 1 / 19 / 7 / 21;
+}
+
+.user-score {
+    grid-area: 5 / 8 / 7 / 12;
+    font-size: 2em;
+    justify-content: flex-start;
+}
+
+.cpu-score {
+    grid-area: 1 / 10 / 3 / 14;
+    justify-content: flex-end;
+    font-size: 2em;
+}
+
+.user-main-card,
+.cpu-main-card {
+    background-color: rgba(255, 255, 255, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-main-card {
+    grid-area: 1 / 3 / 7 / 8;
+    border-radius: 40px 40px 0 0;
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.cpu-main-card {
+    grid-area: 1 / 14 / 7 / 19;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.user-war-cards,
+.cpu-war-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.user-war-cards {
+    grid-area: 1 / 9 / 5 / 21;
+    margin-left: -40px;
+}
+
+.cpu-war-cards {
+    grid-area: 3 / 1 / 7 / 12;
+    margin-right: -80px;
+}
+
+.user-war-card-1,
+.user-war-card-2,
+.user-war-card-3,
+.user-war-card-4,
+.cpu-war-card-1,
+.cpu-war-card-2,
+.cpu-war-card-3,
+.cpu-war-card-4  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-war-card-1,
+.cpu-war-card-4 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.user-war-card-2,
+.cpu-war-card-3 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.user-war-card-3,
+.cpu-war-card-2 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.user-war-card-4,
+.cpu-war-card-1 {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.main-card {
+    width: 80%;
+}

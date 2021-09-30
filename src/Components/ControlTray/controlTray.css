@@ -1,0 +1,47 @@
+.control-tray {
+    height: 100px;
+    display: grid;
+    grid-template-rows: 1;
+    grid-template-columns: repeat(5, 1fr);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
+}
+
+button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.7em;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #334d50, #7c7b63);
+    color: white;
+    cursor: pointer;
+}
+
+.new-game-btn-cont,
+.draw-btn-cont,
+.war-btn-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-game-btn-cont {
+    grid-area: 1 / 1 / 1 / 3;
+}
+
+.draw-btn-cont {
+    grid-area: 1 / 3 / 1 / 4;
+}
+
+.war-btn-cont {
+    grid-area: 1 / 4 / 1 / 6;
+}
+
+.draw-btn {
+    padding: 15px 20px;
+    font-size: 2em;
+}
+
+.disabled {
+    background: black;
+    color: grey;
+}
