@@ -55,12 +55,16 @@ function GameBoard() {
             setUserText('Win!!')
             setCpuText('Lose..')
             if (cpusCards.length === 1) {
+                setUsersCards([...usersCards, ...cpusCards])
+                setCpusCards([])
                 setUserText('VICTORY!!!')
                 setCpuText('DEFEAT...')
                 setPlaying(false)
                 return
             }
             if (war && cpusCards.length < 6) {
+                setUsersCards([...usersCards, ...cpusCards])
+                setCpusCards([])
                 setUserText('VICTORY!!!')
                 setCpuText('DEFEAT...')
                 setPlaying(false)
@@ -68,14 +72,15 @@ function GameBoard() {
             }
             if (war) {
                 const cpuCardLoot = cpusCards.slice(0, 5)
+                console.log(cpuCardLoot)
                 if (usersCards.length < 6) {
                     setUsersCards([...usersCards, ...cpuCardLoot])
                 } else {
-                    const userTopOfDeck = usersCards.slice(6)
+                    const userTopOfDeck = usersCards.slice(5)
                     const usersShuffleCards = usersCards.slice(0, 5)
                     setUsersCards([...userTopOfDeck, ...cpuCardLoot, ...usersShuffleCards])
                 }
-                const cpusNewDeck = cpusCards.slice(6)
+                const cpusNewDeck = cpusCards.slice(5)
                 setCpusCards(cpusNewDeck)
                 setWar(false)
                 setPlaying(true)
@@ -91,12 +96,16 @@ function GameBoard() {
             setUserText('Lose..')
             setCpuText('Win!')
             if (usersCards.length === 1) {
+                setUsersCards([])
+                setCpusCards([...usersCards, ...cpusCards])
                 setUserText('DEFEAT...')
                 setCpuText('VICTORY!!!')
                 setPlaying(false)
                 return
             }
             if (war && usersCards.length < 6) {
+                setUsersCards([])
+                setCpusCards([...usersCards, ...cpusCards])
                 setUserText('DEFEAT...')
                 setCpuText('VICTORY!!!')
                 setPlaying(false)
@@ -104,14 +113,15 @@ function GameBoard() {
             }
             if (war) {
                 const userCardLoot = usersCards.slice(0, 5)
+                console.log(userCardLoot)
                 if (cpusCards.length < 6) {
                     setCpusCards([...cpusCards, ...userCardLoot])
                 } else {
-                    const cpuTopOfDeck = cpusCards.slice(6)
+                    const cpuTopOfDeck = cpusCards.slice(5)
                     const cpuShuffleCards = cpusCards.slice(0, 5)
                     setCpusCards([...cpuTopOfDeck, ...userCardLoot, ...cpuShuffleCards])
                 }
-                const usersNewDeck = usersCards.slice(6)
+                const usersNewDeck = usersCards.slice(5)
                 setUsersCards(usersNewDeck)
                 setWar(false)
                 setPlaying(true)
@@ -215,12 +225,12 @@ function GameBoard() {
                         setUserMainCard(userMain)
                         setCpusMainCard(cpuMain)
                         determineRoundWinner(userMain, cpuMain)
-                    }, 700)
+                    }, 500)
                     setPlaying(true)
                     setWar(false)
-                }, 500)
-            }, 500)
-        }, 500)
+                }, 300)
+            }, 300)
+        }, 300)
     }
 
     return (
