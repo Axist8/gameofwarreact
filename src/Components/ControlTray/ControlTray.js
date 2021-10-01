@@ -11,7 +11,7 @@ function ControlTray(props) {
             </div>
             <div className='draw-btn-cont'>
                 <button
-                    className={`draw-btn ${props.gameStarted ? '' : 'disabled'}`}
+                    className={`draw-btn ${(props.playing && !props.war) ? '' : 'disabled'}`}
                     onClick={props.draw}
                 >
                     DRAW
@@ -20,6 +20,7 @@ function ControlTray(props) {
             <div className='war-btn-cont'>
                 <button
                     className={`war-btn ${props.war ? '' : 'disabled'}`}
+                    onClick={props.goToWar}
                 >
                     WAR
                 </button>
